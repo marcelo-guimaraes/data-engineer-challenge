@@ -1,0 +1,13 @@
+config {
+  type: "operations",
+  database: "marcelo-jobsity-challenge",
+  schema: "raw",
+  name: "raw_trips",
+  hasOutput: true
+}
+
+CREATE OR REPLACE EXTERNAL TABLE ${ self() }
+OPTIONS(
+  format="CSV",
+  uris=["https://drive.google.com/open?id=14JcOSJAWqKOUNyadVZDPm7FplA7XYhrU"]
+);

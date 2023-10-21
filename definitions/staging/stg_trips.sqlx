@@ -1,0 +1,9 @@
+config {
+  type: "table",
+  database: "marcelo-jobsity-challenge",
+  schema: "staging",
+  name: "stg_trips"
+}
+
+select *
+from ${ ref('raw_trips') }
