@@ -5,5 +5,10 @@ config {
   name: "stg_trips"
 }
 
-select *
+select
+  region,
+  origin_coord,
+  destination_coord,
+  datetime,
+  datasource,
 from ${ ref('raw_trips') }
