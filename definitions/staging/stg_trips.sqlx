@@ -1,0 +1,14 @@
+config {
+  type: "table",
+  database: "marcelo-jobsity-challenge",
+  schema: "staging",
+  name: "stg_trips"
+}
+
+select
+  region,
+  origin_coord,
+  destination_coord,
+  datetime,
+  datasource,
+from ${ ref('raw_trips') }
