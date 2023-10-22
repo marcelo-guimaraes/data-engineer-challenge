@@ -1,8 +1,8 @@
 config {
   type: "table",
   database: "marcelo-jobsity-challenge",
-  schema: "staging",
-  name: "stg_trips"
+  schema: "curated",
+  name: "cur_trips"
 }
 
 SELECT
