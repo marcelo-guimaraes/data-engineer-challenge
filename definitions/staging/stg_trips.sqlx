@@ -5,10 +5,13 @@ config {
   name: "stg_trips"
 }
 
-select
+SELECT
   region,
   origin_coord,
   destination_coord,
   datetime,
   datasource,
-from ${ ref('raw_trips') }
+  extract(hour from datetime) as hour_of_day,
+  replace(replace(concat(split(origin_coord, ' ')[OFFSET(2)],',',split(origin_coord, ' ')[OFFSET(1)]),'(',''),')','') as origin_coordinates,
+  replace(replace(concat(split(destination_coord, ' ')[OFFSET(2)],',',split(destination_coord, ' ')[OFFSET(1)]),'(',''),')','') as destination_coordinates,
+FROM ${ ref('raw_trips') }--, UNNEST(GENERATE_ARRAY(1,10000))
