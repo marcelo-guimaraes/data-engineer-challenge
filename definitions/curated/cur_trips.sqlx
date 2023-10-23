@@ -1,0 +1,17 @@
+config {
+  type: "table",
+  database: "marcelo-jobsity-challenge",
+  schema: "curated",
+  name: "cur_trips"
+}
+
+SELECT
+  region,
+  origin_coord,
+  destination_coord,
+  datetime,
+  datasource,
+  extract(hour from datetime) as hour_of_day,
+  replace(replace(concat(split(origin_coord, ' ')[OFFSET(2)],',',split(origin_coord, ' ')[OFFSET(1)]),'(',''),')','') as origin_coordinates,
+  replace(replace(concat(split(destination_coord, ' ')[OFFSET(2)],',',split(destination_coord, ' ')[OFFSET(1)]),'(',''),')','') as destination_coordinates,
+FROM ${ ref('raw_trips') }, UNNEST(GENERATE_ARRAY(1,10000))
