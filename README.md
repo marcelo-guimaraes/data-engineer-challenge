@@ -27,9 +27,10 @@ This [CSV file](https://drive.google.com/file/d/14JcOSJAWqKOUNyadVZDPm7FplA7XYhr
 
 ## Solution
 
+Here is the [link to the video explaining my solution](https://drive.google.com/file/d/13N5IkBpd5Mq9SaqvOXsYvjATlQyaxysr/view?usp=sharing)
+
 ### Architecture
 ![alt text](https://github.com/marcelo-guimaraes/data-engineering-challenge/blob/main/files/diagram.jpeg?raw=true)
 
 I decided to build the solution on the Google Cloud Platform. I used the Google Drive as the data source and built an external table in Google BigQuery pointing to it. Then, using the Dataform as a query engine tool and the Airflow for orchestration, I built a curated table to be ingested by the Looker Studio dashboard. I've also created a stutus table in BigQuery with the status of the pipeline execution from Airflow, that was I could inform the user about the status of the data ingestion.
 As you can see in the [curated table script](https://github.com/marcelo-guimaraes/data-engineering-challenge/blob/main/definitions/curated/cur_trips.sqlx), I multiplied the raw table records to 1M, making the total number of records in the curated table a 100M records, proofing the scalability of the architecture.
-
