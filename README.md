@@ -1,4 +1,4 @@
-![image](https://github.com/marcelo-guimaraes/data-engineering-challenge/assets/56089963/b82cda7d-16ca-45e6-ac1b-3348cccddd44)# data-engineer-challenge
+# data-engineer-challenge
 
 ## Description
 
