@@ -36,6 +36,7 @@ I decided to build the solution on the Google Cloud Platform. I used the Google 
 As you can see in the [curated table script](https://github.com/marcelo-guimaraes/data-engineering-challenge/blob/main/definitions/curated/cur_trips.sqlx), I multiplied the raw table records to 1M, making the total number of records in the curated table a 100M records, proofing the scalability of the architecture.
 
 Here is how the final dashboard looks:
-![image](https://github.com/marcelo-guimaraes/data-engineering-challenge/assets/56089963/f250fadc-964d-4c95-b8b1-3b590decc966)
+![image](https://github.com/marcelo-guimaraes/data-engineering-challenge/assets/56089963/14da5897-5190-45f4-b9dc-64565ea6cb60)
+
 
 
